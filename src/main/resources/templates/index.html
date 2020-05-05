@@ -4,25 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calc Servlet</title>
+    <style>
+        #calc{
+            width: 200pt;
+            height: 200pt;
+            text-align: center;
+            margin: auto;
+            margin-bottom: 10pt;
+        }
+        #result{
+            width: 200pt;
+            height: 50pt;
+            text-align: center;
+            margin: auto;
+        }
+        legend{
+            font-weight: bold;
+            font-family: Arial;
+            font-size: 14pt;
+        }
+    </style>
 </head>
 <body>
-    <form action="/calcular" method="POST">
+            <fieldset id="calc">
+                <legend>Calculadora</legend>
+                <form action="/calcular" method="POST">
         
-        <input type="text" name="num1" id="num1">
+                <input type="text" name="num1" id="num1">
 
-                
-                    <select id=operadores name=operadores>
-                    <option value="+">Somar(+)</option>
-                    <option value="-">Subtrair(-)</option>
-                    <option value="*">Multiplicar(*)</option>
-                    <option value="/">Dividir(/)</option>
-                    </select>
-                
+                    <div>
+                        <select id=operadores name=operadores>
+                        <option value="+">Somar(+)</option>
+                        <option value="-">Subtrair(-)</option>
+                        <option value="*">Multiplicar(*)</option>
+                        <option value="/">Dividir(/)</option>
+                        </select>
+                    </div>
 
-                <input type="text" name="num2" id="num2">
+                <div><input type="text" name="num2" id="num2"></div>
 
-                <input type="submit" value="Calcular!">
+                <div><input type="submit" value="Calcular!"></div>
+            </fieldset>
     </form>
-    <div th:text="${msn}"></div> 
+    
+                <fieldset id="result"><legend>Resultado</legend><div th:text="${msn}"></div></fieldset> 
 </body>
 </html>
