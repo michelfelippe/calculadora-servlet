@@ -7,7 +7,7 @@
     <style>
         #calc{
             width: 200pt;
-            height: 200pt;
+            height: 100pt;
             text-align: center;
             margin: auto;
             margin-bottom: 10pt;
@@ -48,5 +48,9 @@
     </form>
     
                 <fieldset id="result"><legend>Resultado</legend><div th:text="${msn}"></div></fieldset> 
+
+                <ul>
+                    <li th:each="operacao : ${historico}" th:text="${operacao}"></li>
+                </ul>
 </body>
 </html>
